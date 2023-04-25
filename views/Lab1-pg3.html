@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Manager</title>
+
+    <!-- Materialize CSS and Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+    <link rel="stylesheet" href="/stylesheets/assignmentsStyle.css">
+
+</head>
+
+<body class="teal lighten-4">
+
+    <!-- Nav bar -->
+    <header>
+        <nav>
+            <div class="nav-wrapper teal darken-1">
+                <a href="#" class="brand-logo teal darken-1 food-link"> <i class="material-icons left">restaurant</i>Tasty Delights</a>
+
+                <ul id="nav-mobile" class="right hide-on-med-and-down teal darken-1">
+                    <li><a href="Lab1-pg1.html">Home</a></li>
+                    <li><a href="Lab1-pg4.html">Recipes</a></li>
+                    <li><a href="Lab1-pg2.html">Saved Recipes</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Page Contents -->
+    <div class="container">
+        <div class="section flow-text" id="details">
+            <h1>Chicken Penne Pasta</h1>
+            <table>
+                <tr>
+                    <th>Type of Cusine:</th>
+                    <td>Italian</td>
+                </tr>
+                <tr>
+                    <th>Type of Meal:</th>
+                    <td>Dinner</td>
+                </tr>
+                <tr>
+                    <th>Rating</th>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <th>Ingredients:</th>
+                    <td>
+                        <h6>
+                            2 chicken breasts, sliced
+                            <br>
+                            salt, to taste
+                            <br>
+                            pepper, to taste
+                            <br>
+                            2 teaspoons italian seasoning
+                            <br>
+                            1 teaspoon paprika
+                            <br>
+                            2 cloves garlic, minced
+                            <br>
+                            2 cups spinach
+                            <br>
+                            4 small tomatoes, diced
+                            <br>
+                            1 ½ cups cream
+                            <br>
+                            1 cup shredded parmesan cheese, plus more for serving
+                            <br>
+                            ½ teaspoon red pepper flakes, plus more for garnish
+                            <br>
+                            10 oz penne pasta, cooked until al dente
+                            <br>
+                            3 tablespoons Chopped fresh parsley, for garnish
+                        </h6>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Preparation:</th>
+                    <td>
+                        <h6>
+                            1. In a deep skillet, add the chicken and season with salt, pepper, Italian seasoning, and paprika. Cook until no longer pink inside.
+                            <br>
+                            2. Add the garlic and cook until softened. <br>
+                            3. Add spinach and tomatoes and cook until the spinach is wilted.<br>
+                            4. Add the cream, Parmesan, an red pepper flakes and bring to a boil.<br>
+                            5. Add the penne and bacon, and stir until fully coated in sauce. <br>
+                            6. Serve with parsley, Parmesan, and red pepper flakes, if desired. <br>
+                            <br>
+                            Source:
+                            <a href="https://tasty.co/recipe/creamy-chicken-penne-pasta">Recipe Link</a>
+                        </h6>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section" id="controls">
+            <a class="btn-large waves-effect waves-light orange left modal-trigger" href= "#edit">
+                <i class="material-icons right">edit</i>
+                Edit
+            </a>
+            <a class="btn-large waves-effect waves-light red right">
+                <i class="material-icons right">delete</i>
+                Delete
+            </a>
+        </div>
+
+
+        <div class="modal" id="edit">
+
+            <div class="modal-content">
+
+                <h2>Edit item:</h2>
+                <form id="updateForm">
+                    <div class="row">
+                        <div class="input-field col s8">
+                            <input type="text" id="titleInput" name="title" class="validate" data-length="45" required value="Chicken Penne Pasta">
+                            <label for="titleInput">Recipe:</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input type="text" id="cusineInput" name="cusine" class="validate" data-length="45" required value="Italian">
+                            <label for="cusineInput">Type of Cusine:</label>
+                        </div>
+    
+                        <div class="input-field col s6">
+                            <select type="number" id="mealInput" name="meal" required>
+                                <option value="" disabled>Choose type of meal</option>
+                                <option value=1>Breakfast</option>
+                                <option value=2>Lunch</option>
+                                <option value=3 selected>Dinner</option>
+                                <option value=4>Dessert</option>
+                                <option value=5>Snack</option>
+                              </select>
+                              <label for="mealInput">Type of Meal:</label>
+                        </div>
+    
+                        <div class="input-field col s6">
+                            <input type="number" id="ratingInput" name="rating" class="validate" min=1 max=5 value=3>
+                            <label for="ratingInput">Rating (1-5):</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <textarea class="materialize-textarea" id="ingredientInput" name="ingredient" data-length="500">
+                            2 chicken breasts, sliced  
+                            salt, to taste
+                            pepper, to taste
+                            2 tsp italian seasoning
+                            1 tsp paprika
+                            2 cloves garlic, minced
+                            2 cups spinach
+                            4 small tomatoes, diced
+                            1 ½ cups cream
+                            1 cup shredded parmesan cheese, plus more for serving
+                            ½ tsp red pepper flakes, plus more for garnish
+                            10 oz penne pasta, cooked until al dente
+                            3 tbsp chopped fresh parsley, for garnish</textarea>
+                            <label for="ingredientInput">Ingredients:</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <textarea class="materialize-textarea" id="preparationInput" name="preparation" data-length="150">
+                            1. In a deep skillet, add the chicken and season with salt, pepper, 
+                            Italian seasoning, and paprika. Cook until no longer pink inside. 
+                            2. Add the garlic and cook until softened.
+                            3. Add spinach and tomatoes and cook until the spinach is wilted.
+                            4. Add the cream, Parmesan, an red pepper flakes and bring to a boil.
+                            5. Add the penne and bacon, and stir until fully coated in sauce.
+                            6. Serve with parsley, Parmesan, and red pepper flakes, if desired.
+                            Source: https://tasty.co/recipe/creamy-chicken-penne-pasta </textarea>
+                            <label for="preparationInput">Preparation:</label>
+                        </div>
+    
+    
+                    </div>
+                </form>
+                
+                <div class="modal-footer">
+                    
+                    <button class="btn waves-effect waves-light " type="submit" form="updateForm">
+                        <i class="material-icons right">send</i>
+                        Submit
+                    </button>
+                    <button class="modal-close waves-effect waves-green btn-flat">Exit</button>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script> M.AutoInit();</script>
+
+</body>
+
+</html>
