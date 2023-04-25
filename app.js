@@ -22,12 +22,12 @@ app.listen(port, () => {
 
 // define a route for the saved recipe page 
 app.get("/savedrecipe", (req, res) => {
-    res.send(__dirname + "/views/Lab1-pg2.html");
+    res.sendFile(__dirname + "/views/Lab1-pg2.html");
 })
 
 // define a route for the saved recipe detail page 
 app.get("/savedrecipe/details", (req, res) => {
-    res.send(__dirname + "/views/Lab1-pg3.html");
+    res.sendFile(__dirname + "/views/Lab1-pg3.html");
 })
 
 // define a route for the recipe page
