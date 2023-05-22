@@ -1,8 +1,12 @@
 // set up the server
 const express = require("express");
 const app = express()
-const port = 3000;
+const port = 3036;
 const logger = require("morgan");
+
+// new lines 
+const DEBUG = true;
+const db = require('./db/db_connection');
 
 // define middleware that logs all incoming requests
 app.use(logger("dev"));
@@ -20,9 +24,25 @@ app.listen(port, () => {
     console.log(`app listening at localhost:${port}`);
 });
 
+const read_saved_recipes_sql = `
+    SELECT * FROM recipes
+    `
+
 // define a route for the saved recipe page 
 app.get("/savedrecipe", (req, res) => {
-    res.sendFile(__dirname + "/views/Lab1-pg2.html");
+    db.execute (read_saved_recipes_sql, (error, results) =>
+    {
+        if(DEBUG){
+            console.log(error ? error : results)
+        }
+        if(error){
+            res.status(500).send(error)
+        }
+        else{
+            res.send(results);
+        }
+    })
+    
 })
 
 // define a route for the saved recipe detail page 
